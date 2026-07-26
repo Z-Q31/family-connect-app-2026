@@ -1,35 +1,35 @@
 {
-    "name":  "family-communication-frontend",
-    "version":  "1.0.0",
-    "private":  true,
-    "type":  "module",
-    "dependencies":  {
-                         "@types/node":  "^20.11.0",
-                         "@types/react":  "^18.2.48",
-                         "@types/react-dom":  "^18.2.18",
-                         "react":  "^18.2.0",
-                         "react-dom":  "^18.2.0",
-                         "react-router-dom":  "^6.21.3",
-                         "axios":  "^1.6.5",
-                         "typescript":  "^5.3.3",
-                         "tailwindcss":  "^3.4.1",
-                         "autoprefixer":  "^10.4.17",
-                         "postcss":  "^8.4.33",
-                         "express":  "^4.18.2",
-                         "cors":  "^2.8.5",
-                         "uuid":  "^9.0.1"
-                     },
-    "scripts":  {
-                    "dev":  "vite",
-                    "build":  "tsc \u0026\u0026 vite build",
-                    "preview":  "vite preview"
-                },
-    "devDependencies":  {
-                            "@vitejs/plugin-react":  "^4.2.1",
-                            "vite":  "^5.0.12",
-                            "@types/express":  "^4.17.21",
-                            "@types/cors":  "^2.8.17",
-                            "@types/uuid":  "^9.0.7",
-                            "@vercel/node":  "^3.0.0"
-                        }
+    "name": "family-communication-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@types/node": "^20.11.0",
+        "@types/react": "^18.2.48",
+        "@types/react-dom": "^18.2.18",
+        "autoprefixer": "^10.4.17",
+        "axios": "^1.6.5",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "postcss": "^8.4.33",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.21.3",
+        "serverless-http": "^3.2.0",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3",
+        "uuid": "^9.0.1"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build && tsc -p api/_lib/tsconfig.json",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/uuid": "^9.0.7",
+        "@vitejs/plugin-react": "^4.2.1",
+        "vite": "^5.0.12"
+    }
 }

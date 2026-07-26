@@ -1,4 +1,4 @@
-# Dependencies
+﻿# Dependencies
 node_modules/
 
 # Build output
@@ -16,3 +16,6 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+
+# Netlify build output
+frontend/netlify/functions/_lib/
