@@ -1,0 +1,22 @@
+﻿# Render Blueprint 配置文件
+# 文档: https://render.com/docs/blueprint-spec
+# 部署方式: 在 Render Dashboard -> New -> Blueprint,选择此仓库即可自动读取本文件
+
+services:
+  - type: web
+    name: family-communication-backend
+    runtime: node
+    # Monorepo: 后端代码在 backend/ 子目录
+    rootDir: backend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Render 会自动注入 PORT 环境变量,后端代码已通过 process.env.PORT 读取
+      # 如需配置前端访问地址(用于 CORS 白名单),可取消下面注释并填写 Vercel 域名
+      # - key: FRONTEND_URL
+      #   value: https://your-app.vercel.app
