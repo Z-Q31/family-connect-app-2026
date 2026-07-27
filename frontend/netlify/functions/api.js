@@ -1,16 +1,16 @@
-﻿const serverless = require('serverless-http');
-// TypeScript 编译后的 CommonJS 模块,default 导出在 .default 属性上
+const serverless = require('serverless-http');
+// TypeScript compiled CommonJS module, default export in .default
 const appModule = require('./_lib/app');
 const app = appModule.default || appModule;
 
-// Netlify Serverless Function 入口
+// Netlify Serverless Function entry
 const handler = serverless(app);
 
 module.exports.handler = async (event, context) => {
   let path = event.path || '/';
-  // 去掉 Netlify Function 路径前缀
+  // Strip Netlify function path prefix
   path = path.replace('/.netlify/functions/api', '');
-  // 去掉 /api 前缀(前端通过 netlify.toml redirect 已经转发了,但兼容处理)
+  // Strip /api prefix (already handled by netlify.toml redirect, but kept for safety)
   if (path.startsWith('/api')) {
     path = path.slice(4);
   }

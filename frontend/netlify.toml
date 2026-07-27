@@ -1,21 +1,15 @@
-﻿# Netlify 部署配置文件
-# 文档: https://docs.netlify.com/configure-builds/file-based-configuration/
-
 [build]
-  # 构建命令
   command = "npm run build"
-  # 前端静态文件输出目录
   publish = "dist"
-  # Serverless Functions 目录
   functions = "netlify/functions"
 
-# 重写规则:将 /api/* 请求转发到 Netlify Function
+# API 请求转发到 Netlify Function
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
 
-# SPA 路由:所有非文件请求都返回 index.html
+# SPA 路由: 非 API 请求返回 index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
